@@ -1,0 +1,82 @@
+body {
+  font-family: 'Fredoka', sans-serif !important;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:hover {
+  box-sizing: border-box;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 200px;
+  border-top: 1px solid #ccc;
+  padding: 16px;
+}
+
+.ranges {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.range {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.range input {
+  margin-left: 10px;
+}
+
+.btn {
+  font-family: 'Fredoka', sans-serif !important;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 1.5715;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  box-shadow: 0 2px #00000004;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 2px;
+  color: #000000d9;
+  border-color: #d9d9d9;
+  background: #fff;
+}
+
+.btn.btn-primary {
+  color: #fff;
+  border-color: #1890ff;
+  background: #1890ff;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px #0000000b;
+}
+
+.btn.btn-primary:hover {
+  border-color: #40a9ff;
+  background: #40a9ff;
+}
