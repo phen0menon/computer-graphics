@@ -79,10 +79,7 @@ function loop() {
 
   constructCanvas()
 
-  const edges = vertices.map((vertex) => {
-    const rotated = vertex.rotateX(angle)
-    return rotated.project()
-  })
+  const edges = vertices.map((vertex) => vertex.rotateX(angle).project())
 
   faces.forEach((face) => {
     graph.ctx.beginPath()
