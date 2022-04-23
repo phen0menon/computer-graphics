@@ -56,7 +56,7 @@ const to2DArray = (data, imageWidth) => {
   return result
 }
 
-const findPixelIndex = (x, y, imageWidth) => {
+const getPixelIndex = (x, y, imageWidth) => {
   return (y * imageWidth + x) * 4
 }
 
@@ -114,6 +114,7 @@ const tracert = (startX, startY, pixels) => {
       shouldTraverse = false
     }
 
+    // костыльчик
     if (traversedPixelsCount++ === MAX_TRAVERSE_PIXELS) {
       shouldTraverse = false
     }
@@ -135,18 +136,18 @@ const tracert = (startX, startY, pixels) => {
 
   const perimeter = shapePoints.length
 
-  let areaCounter = 0
+  let blackPixelsCount = 0
 
   for (let y = borders.minY; y < borders.maxY; y++) {
     for (let x = borders.minX; x < borders.maxX; x++) {
       if (pixels[y][x][0] === 0) {
-        areaCounter++
+        blackPixelsCount++
         shapePoints.push([x, y])
       }
     }
   }
 
-  const p = perimeter / Math.sqrt(areaCounter)
+  const p = perimeter / Math.sqrt(blackPixelsCount)
 
   if (p > 3 && p < 5 && shapePoints.length > 100) {
     isControlPoint = true
@@ -173,14 +174,14 @@ const start = () => {
 
   for (let y = 0; y < pixels.length; y++) {
     for (let x = 0; x < pixels[y].length; x++) {
-      const pixel = findPixelIndex(x, y, img.width)
+      const pixel = getPixelIndex(x, y, img.width)
       const isBlackPixel = rawPixels[pixel] === 0
 
       if (isBlackPixel) {
         const { shapePoints, isControlPoint } = tracert(x, y, pixels)
         if (isControlPoint) {
           shapePoints.forEach(([x, y], i) => {
-            const idx = findPixelIndex(x, y, img.width)
+            const idx = getPixelIndex(x, y, img.width)
             imageData.data[idx] = 103
             imageData.data[idx + 1] = 39
             imageData.data[idx + 2] = 176

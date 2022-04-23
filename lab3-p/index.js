@@ -104,7 +104,7 @@ startDragListeners = () => {
         shape: shapeSelect.value,
       }
 
-      if (shapeSelect.value !== ShapeTypes.shape) {
+      if (shapeSelect.value !== ShapeTypes.shape && !shape.ref) {
         shape.ref = { ...genericShapeProperties, vertex: [] }
       } else {
         if (!shape.ref) {
