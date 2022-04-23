@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      .canvas {
+        margin-top:100px;
+        width: 100vw;
+        height: 100vh;
+      }
+      .settings {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform:translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      input[type='file'], button {
+        background: #fff;
+        border: none;
+        padding: 6px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="settings">
+      <div>
+        <input type="file" onchange="showFile(this)" />
+      </div>
+      <div style="margin-top: 16px;">
+        <button onclick="start()">Start</button>
+      </div>
+    </div>
+    <canvas class="canvas"></canvas>
+  </body>
+  <script src="./index.js"></script>
+</html>

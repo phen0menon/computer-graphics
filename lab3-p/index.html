@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+      .settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;z-index: 919;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="settings">
+      <div class="shape">
+        <div><input type="radio" name="type" id="shape-type" value="circle" checked /> Circle</div>
+        <div><input type="radio" name="type" id="shape-type" value="rectangle" /> Rectangle</div>
+        <div><input type="radio" name="type" id="shape-type" value="triangle" /> Triangle</div>
+        <div><input type="radio" name="type" id="shape-type" value="shape" /> Shape</div>
+      </div>
+
+      <div>
+        <button id="evaluate" type="button" >Evaluate</button>
+      </div>
+    </div>
+    <canvas class="canvas" width="600" height="600"></canvas>
+  </body>
+  <script src="./index.js"></script>
+</html>
